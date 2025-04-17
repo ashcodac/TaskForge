@@ -4,14 +4,14 @@ const BinPage = () => {
   const [deletedTasks, setDeletedTasks] = useState([]);
   const [error, setError] = useState(null);
 
+  // Mock data for now
   useEffect(() => {
-    fetch("/api/deleted-tasks")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch");
-        return res.json();
-      })
-      .then((data) => setDeletedTasks(data))
-      .catch((err) => setError(`Error: ${err.message}`));
+    const mockData = [
+      { id: 1, name: "Task 1" },
+      { id: 2, name: "Task 2" },
+      { id: 3, name: "Task 3" },
+    ];
+    setDeletedTasks(mockData);
   }, []);
 
   return (

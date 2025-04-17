@@ -9,6 +9,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Logged in with:", { email, password });
+    // Add API call here for real login
     navigate('/');
   };
 

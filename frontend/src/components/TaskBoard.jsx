@@ -8,6 +8,8 @@ const TaskBoard = () => {
 
   const handleAddTask = (newTask) => {
     setTasks((prev) => [...prev, newTask]);
+    // Normally, we would call an API here to save the task to the backend
+    // For now, this simply updates the state.
   };
 
   return (

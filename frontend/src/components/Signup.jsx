@@ -14,6 +14,7 @@ function Signup() {
       return;
     }
     console.log("Signed up with:", { email, password });
+    // Add API call here for real signup
     navigate('/login');
   };
 
