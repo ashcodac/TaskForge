@@ -22,26 +22,40 @@ function Navbar() {
 
   const navLink = "text-sm font-medium hover:text-blue-500 transition";
 
-  return (
+return (
     <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">TaskForge</h1>
-        <nav className="flex space-x-4 items-center">
-          <Link className={navLink} to="/">Task Board</Link>
-          <Link className={navLink} to="/bin">Bin</Link>
-          <Link className={navLink} to="/login">Login</Link>
-          <Link className={navLink} to="/signup">Sign Up</Link>
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded text-yellow-500 hover:text-yellow-400 transition"
-            title="Toggle Dark Mode"
-          >
-            {isDark ? '🌙' : '☀️'}
-          </button>
-        </nav>
-      </div>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="/">
+                <img
+                    src="/TaskForge.png"
+                    alt="TaskForge Logo"
+                    className="h-12 w-auto object-contain mx-2"
+                />
+            </a>
+            <nav className="flex space-x-4 items-center">
+                <Link className={navLink} to="/">
+                    Task Board
+                </Link>
+                <Link className={navLink} to="/bin">
+                    Bin
+                </Link>
+                <Link className={navLink} to="/login">
+                    Login
+                </Link>
+                <Link className={navLink} to="/signup">
+                    Sign Up
+                </Link>
+                <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded text-yellow-500 hover:text-yellow-400 transition"
+                    title="Toggle Dark Mode"
+                >
+                    {isDark ? '🌙' : '☀️'}
+                </button>
+            </nav>
+        </div>
     </header>
-  );
+);
 }
 
 export default Navbar;
