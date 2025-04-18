@@ -105,4 +105,4 @@ Please follow the project's coding style and guidelines.
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE) (or specify the license you're using).
+This project is open-source and available under the [MIT License](LICENSE).
