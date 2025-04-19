@@ -1,24 +1,16 @@
-import { Button } from '@mantine/core';
-import { IconPlus } from '@tabler/icons-react';
+// src/components/AddTaskButton.js
+import { Plus } from 'lucide-react';
 
-function AddTaskButton() {
+const AddTaskButton = ({ onClick }) => {
   return (
-    <Button
-      leftIcon={<IconPlus />}
-      size="md"
-      radius="xl"
-      color="blue"
-      style={{
-        position: 'fixed',
-        bottom: '2rem',
-        right: '2rem',
-        zIndex: 1000,
-        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-      }}
+    <button
+      onClick={onClick}
+      className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition duration-300"
+      aria-label="Add Task"
     >
-      Add Task
-    </Button>
+      <Plus size={24} />
+    </button>
   );
-}
+};
 
 export default AddTaskButton;
