@@ -1,7 +1,10 @@
+// Base URL for the API (adjust accordingly for production)
+const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://your-backend-url.com' : 'http://localhost:5000';
+
 // Fetch all tasks from the backend
 export const getTasks = async () => {
   try {
-    const response = await fetch('/tasks');
+    const response = await fetch(`${BASE_URL}/tasks`);
     
     // Check if the response is not ok
     if (!response.ok) {
@@ -19,7 +22,7 @@ export const getTasks = async () => {
 // Add a new task to the backend
 export const addTask = async (task) => {
   try {
-    const response = await fetch('/tasks', {
+    const response = await fetch(`${BASE_URL}/tasks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +45,7 @@ export const addTask = async (task) => {
 // Update a task on the backend
 export const updateTask = async (taskId, updatedTask) => {
   try {
-    const response = await fetch(`/tasks/${taskId}`, {
+    const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +68,7 @@ export const updateTask = async (taskId, updatedTask) => {
 // Soft delete a task on the backend
 export const deleteTask = async (taskId) => {
   try {
-    const response = await fetch(`/tasks/${taskId}`, {
+    const response = await fetch(`${BASE_URL}/tasks/${taskId}`, {
       method: 'DELETE',
     });
 
@@ -83,7 +86,7 @@ export const deleteTask = async (taskId) => {
 // Permanently delete a task (DELETE)
 export const permanentDeleteTask = async (taskId) => {
   try {
-    const response = await fetch(`/tasks/${taskId}/permanent`, {
+    const response = await fetch(`${BASE_URL}/tasks/${taskId}/permanent`, {
       method: 'DELETE',
     });
 
